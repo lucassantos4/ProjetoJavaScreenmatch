@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.main;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -6,25 +8,26 @@ import br.com.alura.screenmatch.modelos.Serie;
 
 import java.util.ArrayList;
 
-public class Principal {
+public class Main {
     static void main(String[] args) {
 
-        var filme3 = new Filme();
-        filme3.setNome("O Espetacular Homem Aranha.");
-        filme3.setAnoDeLancamento(2012);
+        var filme3 = new Filme("O espetacular homem aranha" , 2012);
+
+        //filme3.setNome("O Espetacular Homem Aranha.");
+        //filme3.setAnoDeLancamento(2012);
         filme3.setDuracaoEmMinutos(136);
         filme3.avalia(10);
 
-        var meuFilme = new Filme();
+        var meuFilme = new Filme("O poderoso chefão" , 1970);
 
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        //meuFilme.setNome("O poderoso chefão");
+        //meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
 
-        Filme outroFilme = new Filme();
+        Filme outroFilme = new Filme("Avatar" , 2023);
 
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        //outroFilme.setNome("Avatar");
+        //outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
 //        meuFilme.exibeFichaTecnica();
@@ -36,9 +39,7 @@ public class Principal {
 //        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
 //        System.out.println("Média de avaliações do filme: " + meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost" , 2000);
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
@@ -52,22 +53,22 @@ public class Principal {
         //System.out.println(calculadora.getTempoTotal());
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-        filtro.filtra(meuFilme);
+//        filtro.filtra(meuFilme);
 
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
 
-        filtro.filtra(episodio);
+//        filtro.filtra(episodio);
 
-        ArrayList<Filme> listadefilmes = new ArrayList<>();
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
 
-        listadefilmes.add(filme3);
-        listadefilmes.add(outroFilme);
-        listadefilmes.add(meuFilme);
-        System.out.println("Tamanho da lista" +listadefilmes.size());
-        System.out.println("Primeiro filme: " + listadefilmes.get(0).getNome() );
+        listaDeFilmes.add(filme3);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(meuFilme);
+//
+
 
     }
 }
