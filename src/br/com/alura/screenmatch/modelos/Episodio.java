@@ -1,6 +1,7 @@
 package br.com.alura.screenmatch.modelos;
 
 import br.com.alura.screenmatch.calculos.Classificavel;
+import com.google.gson.annotations.SerializedName;
 
 public class Episodio implements Classificavel {
     private int numero;
